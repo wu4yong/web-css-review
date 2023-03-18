@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用相对定位操作元素</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            border: solid 5px blue;
+            width:400px;
+            height:400px;
+            padding: 30px;
+        }
+        p img{
+           width:30px;
+           height:30px;
+           border-radius: 50%;
+           /*相对 当前的位置是保留的 相对正常的文档流原来的位置*/
+           position: relative;
+           top:-10px; /*倒着走*/
+           /* left:20px */
+           /* right:30px;
+           bottom: 30px; */
+           
+        }
+        
+    </style>
+</head>
+<body>
+   <p>
+       <img src="https://pix10.agoda.net/geo/city/3987/1_3987_02.jpg?s=1920x822">
+       It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+   </p>
+</body>
+</html>

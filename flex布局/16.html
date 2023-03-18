@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素的排列顺序实例</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 400px;
+            height: 500px;
+            padding:10px;
+            display:flex;
+            flex-direction: column;
+        }
+
+        article section{
+            flex: 1 0 100px;
+            background: blueviolet;
+            background-clip: content-box;
+            padding:10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        article section div{
+            flex: 1;
+            display: flex;
+            flex-direction:column;
+            /*主轴中心*/
+            justify-content: center;
+            font-size:25px;
+        }
+
+        article section span{
+            padding:10px;
+            background: #333;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <section>
+             <div>py1</div>
+             <span>up</span>
+         </section>
+         <section>
+            <div>py2</div>
+            <span>up</span>
+        </section>
+        <section>
+            <div>py3</div>
+            <span onclick="up(this)">up</span>
+        </section>
+     </article>
+</body>
+<script>
+    function up(el){
+        let order = getComputedStyle(el.parentElement, null).order;
+        el.parentElement.style.order = order * 1-1;
+    }
+</script>
+</html>

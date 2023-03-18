@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图标定位案例操作</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 100px;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            width: 300px;
+            border: solid 8px blue;
+            /*overflow 浮动让父级元素感知子元素的存在， 自动撑满*/
+            overflow: hidden;
+            position: relative;
+        }
+        ul li img{
+            width:100%;
+            float: left;
+        }
+        
+        ul li span{
+            /*不保留原来的空间，脱离文档流*/
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: blueviolet;
+            border-radius: 50%;
+            text-align: center;
+            line-height:2em;
+            font-size:14px;
+            color:white;
+            left:10px;
+            top:10px;
+            box-shadow: 0 0 10px #333;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <span>热</span>
+            <img src="https://pix10.agoda.net/geo/city/3987/1_3987_02.jpg?s=1920x822"/>
+        </li>
+    </ul>
+</body>
+</html>

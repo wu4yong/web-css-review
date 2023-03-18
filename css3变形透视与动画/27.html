@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perspective透视规则与函数不同应用体验</title>
+    <style>
+       body{
+           width:100vw;
+           height:100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: #3B3B98;
+       } 
+
+       /*一个的元素是由多个形状构成的可以把透视放在父级上*/
+       main{
+          display: flex;
+          /*只影响整体的子元素的观察*/
+          /* perspective:600px; */
+          border: 5px solid silver;
+          transform: perspective(600px) rotateY(45deg)
+       }
+    
+       
+
+       div{
+           margin-right: 100px;
+           width:200px;
+           height:200px;
+           background:#f1c40f;
+           /*单独元素上应用透视(perspective 参数值越小就感觉这个变换越明显(透视的力度)，主观感觉离你越近), 透视情况一样 */
+           /* transform:perspective(900px) rotateY(45deg); */
+           transform: perspective(600px) rotateY(45deg);
+       }
+    </style>
+</head>
+<body>
+   <main>
+      <div></div>
+      <div></div>
+   </main>
+</body>
+</html>

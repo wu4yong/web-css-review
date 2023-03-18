@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+       *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            display: grid;
+            background-color:#2c3e50;
+        }
+
+        main{
+            width:400px;
+            height: 200px;
+            align-self: center;
+            justify-self: center;
+            /*溢出隐藏，再某一时刻只显示一张图片*/
+            overflow: hidden;
+            position: relative;
+        }
+
+        
+
+        section{
+            width: 1600px;
+            height: 200px;
+            display:grid;
+            grid-template: 1fr / repeat(4, 400px);
+            animation-name:slide;
+            animation-duration: 4s;
+            animation-timing-function: steps(4,end);
+            animation-iteration-count: infinite;
+        }
+
+        section:hover, section:hover+ul::after{
+            animation-play-state: paused;
+        }
+
+        section>div{
+            /*防止溢出*/
+            overflow: hidden;
+        }
+        img{
+            /*等比适应宽高*/
+            width: 100%;
+        }
+
+
+        @keyframes slide{
+            to{
+                transform: translateX(-1600px);
+            }
+        }
+
+
+
+        ul{
+            position: absolute;
+            left:50%;
+            bottom:20px;
+            width: 200px;
+            transform: translateX(-50%);
+            display: grid;
+            grid-template: 1fr / repeat(4, 1fr);
+            /*每个元素居中在栅格的水平中间*/
+            justify-items: center;
+            list-style: none;
+        }
+
+        ul>li{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(0,0,0,.3);
+            display: grid;
+            place-items: center;
+            color: white;
+        }
+
+        ul::after{
+            content:'';
+            position: absolute;
+            left: 10px;
+            top:0;
+            width: 30px;
+            height: 30px; 
+            border-radius: 50%;
+            background: #e74c3c; 
+            z-index: -1;
+            animation-name: number;
+            animation-duration: 4s;
+            animation-timing-function: steps(4,end);
+            animation-iteration-count: infinite;
+        }
+        
+
+        @keyframes number {
+          to{
+            transform: translateX(200px); 
+          }
+        }
+    
+    </style>
+</head>
+<body>
+</body> 
+    <main>
+        <section>
+            <div><img src="https://randomwordgenerator.com/img/picture-generator/57e7dc4b4a5aac14f1dc8460962e33791c3ad6e04e507749712e79d29045cc_640.jpg" alt=""></div>
+            <div><img src="https://randomwordgenerator.com/img/picture-generator/57e6d0434c55ab14f1dc8460962e33791c3ad6e04e507440762a7cd19145c4_640.jpg" alt=""></div>
+            <div><img src="https://randomwordgenerator.com/img/picture-generator/gdb88e214954e986ff79401d06496b93e5b80c5a124b1bf02c828faf910e3d6e01e787dc8bf602e26c585ac4e8dbbb76c_640.jpg" alt=""></div>
+            <div><img src="https://randompicturegenerator.com/img/dog-generator/g446bd15f34f6fcb35272fa878493a90e9600b73e57f1f1dbca68ac22b9a1f780cb58c8a940d5727f930aa78d7b537b82_640.jpg" alt=""></div>
+        </section>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </main>
+</html>

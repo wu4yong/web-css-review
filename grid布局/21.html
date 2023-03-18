@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组合简写珊格内元素对齐</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            margin: 0 auto;
+            border: 1px solid silver;
+            width: 400px; 
+            height: 100px;
+            grid-template-columns: repeat(4, 60px);
+            /* justify-items:center;
+            align-items:center; */
+            /*垂直方向中心，水平方向间距都一样*/
+            /*注意place-content是控制珊格之间的对齐方式*/
+            place-content: center space-evenly;
+            /*组合定义*/
+            /*垂直方向贴底部，水平方向间距都一样*/
+            /* place-content: end space-evenly; */
+            /*只设置一个代表垂直和水平参数一样 比如下面都是居中*/
+            /* place-content: start center; */
+
+            /*place-items决定珊格元素在珊格里面的排列方式 整体决定 珊格元素一个对齐方式*/
+            /*垂直start, 水平center*/
+            /* place-items: end center; */
+            
+        }
+        article div{
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            color:white;
+            font-size:25px;
+            border:1px solid blueviolet
+        }
+        
+        article div:nth-child(1){
+            /*对元素单独控制 justify-self和algin-self的缩写简写*/
+            place-self: center end;
+        }
+    
+        article div:nth-child(2){
+            place-self: start center;
+        }
+        
+        article div:nth-child(3){
+            /*垂直end 水平end*/
+            place-self: end;
+        }
+
+        article div:nth-child(4){
+            /*垂直居中 水平也居中*/
+            place-self: center;
+        }
+    </style>
+</head>
+<body>
+    hello
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </article>
+</body>
+</html>

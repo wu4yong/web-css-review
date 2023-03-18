@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition组合设置</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }    
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #0fbcf9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div{
+            width:200px;
+            height:200px;
+            background: #00d8d6;
+            border: 2px solid #fff;
+            /* transition-property: border-radius, background, width ,height; */
+            /* transition:all linear 0.2s 1s ; */
+            /* transition组合设置属性 顺序 要过渡的属性 ｜ 过渡函数(ease/ease-in/ease-out|steps()) | 过渡时间 | 延迟时间  */
+            /* 过渡时间是一定要有的 */
+            transition: border-radius step-start 2s 0s, 
+                        background ease-in 2s 2s, 
+                        width ease-out 2s 4s, 
+                        height ease-in-out 2s 4s;
+        }
+        
+
+        div:hover{
+            border-radius: 50%;
+            width:400px;
+            height:400px;
+            background: #ff5e57;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+</html>

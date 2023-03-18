@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多动画控制移动端引导背景页</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            background:steelblue
+        }
+
+        main{
+            width:100vw;
+            height:100vh;
+            background: skyblue;
+            transform: scale(0);
+            animation-name: sca,clos, bor;
+            animation-duration: 4s;
+            /*让它停留在最后一帧*/
+            animation-fill-mode: forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+         main::after{
+             content: 'www.py.com';
+             font-size:2em;
+             color:white;
+             opacity: 0;
+             animation-name: op;
+             animation-delay: 4s;
+             animation-duration: 2s;
+             animation-fill-mode: forwards;
+         }
+
+        @keyframes op{
+            to{
+                opacity: .8;
+            }
+        }
+    
+
+        /*帧动画*/
+        @keyframes sca {
+            25%{
+                transform: scale(.5);
+            }
+            50%{
+                transform: scale(1) rotate(360deg);
+            }
+            75%{
+                transform: scale(.5);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+        
+        
+        @keyframes clos {
+            25%{
+                background: #fdcb6e;
+                /*当属性发生重叠的时候，写在后面的权重更高，以这个为准*/
+                /* transform: translateX(300px); */
+            }
+            50%{
+                background:#00b894
+            }
+            75%{
+               background: #e84393;
+            }
+            to{
+                background:darkgreen;
+            }
+        }
+
+        @keyframes bor {
+            25%{
+                border-radius: 50%;
+            }
+            50%{
+                 border-radius: 0%;
+            }
+            75%{
+                border-radius: 50%;
+            }
+        }
+
+    </style>
+</head>
+<body> 
+    <main>
+        <nav></nav>
+    </main>
+</body>
+</html>

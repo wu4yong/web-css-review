@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缩放图片的案例</title>
+    <style>
+        *{
+          margin: 0;
+          padding:0;
+        }
+        body{
+            width:100vw;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:#7f8fa6;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main div{
+            width:200px;
+            height:200px;
+            margin-right: 20px;
+            overflow: hidden;
+            border:solid 2px #95a5a6;
+            transition:1s;
+        }
+        main div>img{
+            width: 100%;
+            filter: blur(10px);
+            transition: 1s;
+        }
+        
+        div>img:hover{
+            /*当hover图片的时候放大图片，并取消模糊，整个过程过渡1s*/
+            transform: scale(1.3);
+            filter:none;
+        }
+
+        main:hover div{
+            /* filter: blur(15px);
+            transform:scale(.6); */
+        }
+        
+        main:hover div:hover{
+            /*你碰的那张图片放大并取消模糊*/
+            /* transform: scale(1.6);
+            filter: none; */
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <img src="https://i.pinimg.com/564x/aa/59/70/aa5970d7cc5cd669ffa3268fef34790a.jpg"/>
+        </div>
+        <div>
+            <img src="https://i.pinimg.com/564x/66/de/e0/66dee04792a4a6a89cc7818571bccc29.jpg"/> 
+        </div>
+        <div>
+            <img src="https://i.pinimg.com/564x/c7/21/81/c721816713161900abdb30c111ce4628.jpg"/>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控制元素居中的技巧</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            /*居中*/
+            justify-content: center;
+            align-items: center;
+        }
+        main{ 
+            width:400px;
+            height:400px;
+            position:absolute;
+            border: 5px solid blue;
+        }
+        main nav{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            width:200px;
+            height:200px;
+        }
+
+        main nav:nth-of-type(1){
+            background-color:#ff7979
+        }
+        
+        main nav:nth-of-type(2){
+            background-color:#6ab04c;
+            transition: 1s;
+        }
+        
+        main:hover nav:nth-of-type(2){
+            /*scaleX(x)缩放到原来宽度的x倍,scaleY(y)缩放到原来高度的y倍 x,y数值不加单位*/
+           /* transform: scaleY(.5); */
+           /*类似于translate，scale也支持缩写,scale(x,y)*/
+           transform: scale(2,.5);
+        }
+        </style>
+</head>
+<body>
+    <main>
+        <nav></nav>
+        <nav></nav>
+    </main>
+</body>
+</html>

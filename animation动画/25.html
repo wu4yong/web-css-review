@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation-fill-mode动画填充模式</title>
+    <style>
+       *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            display: grid;
+            background-color:#2c3e50;
+            justify-items: center;
+            align-items: center;
+        }
+
+        ul{
+           list-style: none;
+           width: 400px;
+           height: 100px;
+           display: grid;
+           grid-template: 1fr / repeat(4, 1fr);
+        }
+
+        /*初始状态*/ 
+        ul>li{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #e67e22;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul>li:nth-child(1){
+            animation-name: hd;
+            /*normal，原始状态->原始状态*/
+        }
+
+        ul>li:nth-child(2){
+            animation-name: hd;
+            /*起始帧到原始状态*/
+            /*延迟的过程当中使用第一帧，所以在延迟的两秒钟 帧走完又回到初始状态*/
+            animation-fill-mode: backwards;
+        }
+
+        ul>li:nth-child(3){
+            animation-name: hd;
+            /*原始状态到结束帧*/
+            /*在结束动画时定到结束帧，不会到初始状态*/
+            animation-fill-mode: forwards;
+        }
+
+        ul>li:nth-child(4){
+            animation-name: hd;
+            /*起始帧到结束帧*/
+            /*起始的时候是0帧，结束的时候是结束帧，不会到原始状态*/
+            animation-fill-mode: both;
+        }
+
+        @keyframes hd{
+            /*起始帧*/
+            from{
+                transform: scale(0);
+            }
+            /*结束帧*/
+            to{
+                transform: scale(1);
+                background: green;
+            }
+        }
+
+    </style>
+</head>
+<body>
+   <ul>
+       <li>normal</li>
+       <li>backwards</li>
+       <li>forwards</li>
+       <li>both</li>
+   </ul>
+</body>
+</html>

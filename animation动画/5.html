@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多个动画的使用与时间配置</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            background:#8c7ae6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width:400px;
+            height:400px;
+            border:1px solid #fff;
+        }
+
+
+        main>nav{
+            width:100px;
+            height:100px;
+            background:#ff3f34;
+            /*集成多个动画*/
+            /*trans 4s clos:2s bor:4s(从头开始)*/
+            animation-name: trans,clos,bor;
+            /* animation-duration:4s,2s; */
+            /*trans 4s clos:2s bor:1s(从头开始)*/
+            animation-duration:4s,2s,1s;
+        }
+        
+        
+        /*帧动画*/
+        @keyframes trans {
+            25%{
+                transform: translateX(300px);
+            }
+            50%{
+                transform: translate(300px, 300px);
+            }
+            75%{
+                /*对比元参照点在x轴方向不需移动*/
+                transform: translateY(300px);
+            }
+        }
+        
+        
+        @keyframes clos {
+            25%{
+                background: #fdcb6e;
+            }
+            50%{
+                background:#00b894
+            }
+            75%{
+               background: #e84393;
+            }
+        }
+
+        @keyframes bor {
+            25%{
+                border-radius: 50%;
+            }
+            50%{
+                 border-radius: 0%;
+            }
+            75%{
+                border-radius: 50%;
+            }
+        }
+
+    </style>
+</head>
+<body> 
+    <main>
+        <nav></nav>
+    </main>
+</body>
+</html>

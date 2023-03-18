@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微场景布局演示延迟的使用</title>
+    <style>
+        *{
+          padding:0;
+          margin:0;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            display:grid;
+            grid-template-rows:10vh 1fr 10vh;
+            
+        }
+        
+        header{
+            background:#e67e22;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: #fff;
+        }
+        
+        main{
+            background:url(https://youimg1.tripcdn.com/target/100w1f000001gw9498A72.jpg) no-repeat;
+            background-size:cover;
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main>div{
+            border-radius: 10px;
+            width:80vw;
+            padding:10px;
+            color:#fff;
+            opacity: .8;
+            box-shadow: 0 0 10px rgba(0,0,0,.8);
+        }
+
+        main>div:nth-child(1){
+            background: #8e44ad;
+            transform: translateY(-50px);
+        }
+
+        main>div:nth-child(2){
+            background: #e74c3c;
+        }
+    
+        footer{
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3em;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <header>js learning</header>
+    <main>
+        <div>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+        </div>
+        <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+        </div>
+    </main>
+    <footer>shanghai</footer>
+</body>
+</html>

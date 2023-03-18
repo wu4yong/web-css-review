@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性中间值对过渡的影响</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }    
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #0fbcf9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div{
+            width:200px;
+            height:200px;
+            background: #00d8d6;
+            border: 50px solid #fff;
+            transition: 2s;
+        }
+        
+
+        div:hover{
+            /*此时没有过渡*/
+            border-radius: 50%;
+            /*存在中间值就会有过渡*/
+            width:400px;
+            height:400px;
+            /*此时border不存在过渡 因为它没有中间值*/
+            border: dotted 50px #fff;
+            /*ok*/
+            background: #ff5e57;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+</html>

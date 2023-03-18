@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数叠加与顺序对变形结果的影响</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{ 
+            width:400px;
+            height:400px;
+            position:absolute;
+            border: 5px solid blue;
+            transform-style: preserve-3d;
+            transform: perspective(900px) rotateY(-45deg);
+        }
+        main div{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            width:200px;
+            height:200px;
+            transition: 1s;
+            /* transform: translate(100%, 100%); */
+
+            /*先y后x与先x后y不一样 后y先x就代表在x轴处旋转的幅度更大*/
+            transform: rotateY(45deg) rotateX(45deg);
+            
+        }
+
+        main div{
+            background-color:#ff7979
+        }
+
+
+        main:hover  div{
+            /*要保留之前的水平和垂直偏移的位置一定要把原有的属性translate()拿过来，否则后面会覆盖前面*/
+            /* transform: perspective(900px) rotateX(45deg) translate(100%, 100%); */
+            transform: perspective(900px);
+        }
+    </style>
+</head>
+<body>
+   <main>
+       <div></div>
+   </main>
+</body>
+</html>

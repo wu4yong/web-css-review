@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素的排列顺序</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 400px;
+            height: 500px;
+            padding:10px;
+            display:flex;
+            flex-direction: row;
+            /*主轴的排列方式*/
+            justify-content: space-between;
+            /*交叉轴的排列方式*/
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+     <article>
+        hello
+        <div>hello py</div>
+        what
+     </article>
+</body>
+</html>

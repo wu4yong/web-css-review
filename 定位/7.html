@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动对定位元素的影响</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        article{
+            border: solid 8px blueviolet;
+            width:400px;
+            height:400px;
+            margin: 100px;
+            position: relative;
+            /*注意！！！！此时容器内的已定位的内容依然会随着滚动条滚动而发生滚动*/
+            overflow:scroll;
+        }
+        section{
+            height:3000px;
+            background: #ddd;;
+        }
+        nav{
+            background: red;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <section>
+             <nav></nav> 
+        </section>
+    </article>
+</body>
+</html>

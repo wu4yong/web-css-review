@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首尾元素的伪类选择</title>
+    <style>
+        /*后代中的一个元素下面的第一个h1和aside中的第一个h2会被选中*/
+        /* article :first-child{
+            color: red;
+        } */
+        /*子元素的第一个,只有下面的第一个h1*/
+        /* article>:first-child{
+            color: red;
+        } */
+        /*后代元素中第一个类型为h2的元素*/
+        /* article h2:first-of-type{
+            color: red;
+        } */
+        /*子元素中第一个类型为h2的元素*/
+        /* article>h2:first-of-type{
+            color: red
+        } */
+       
+        /*后代元素中h2必须占据第一的位置才能被选出来*/
+        /* article h2:first-child{
+            color: green
+        } */
+
+        /*后代元素中最后出现的h3类型*/
+        /* article h3:last-of-type{
+            color: skyblue
+        } */
+        /*后代元素中最后出现一定要是h3才会被选中*/
+        /* article h3:last-child{
+            color: chartreuse;
+        } */
+        /*last-child last-of-type同理*/
+        
+    </style>
+</head>
+<body>
+   <main>
+     <article>
+         <h1>py</h1>
+         <h2>hello</h2>
+         <aside>
+             <h2>hello</h2>
+             <h3>你好</h3>
+             <!-- <span>hello world</span> -->
+         </aside>
+         <h1>test css</h1>
+     </article>
+   </main>
+</body>
+</html>

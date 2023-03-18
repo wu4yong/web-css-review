@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体验三维z轴的效果(穿透)</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            /*居中*/
+            justify-content: center;
+            align-items: center;
+            background: #636e72;
+        }
+        main{
+            position:absolute;
+            width:400px;
+            height:400px;
+            border: 5px solid blue;
+        }
+        main div{
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            width:200px;
+            height:200px;
+            transition: 1s;
+        }
+
+        main div:nth-of-type(1){
+            background-color:#ff7979;
+            transform: perspective(900px) rotateY(45deg);
+        }
+        
+        main div:nth-of-type(2){
+            background-color:#6ab04c;
+            transform: perspective(900px) rotateY(45deg) translateZ(0px);
+        }
+        
+        main:hover div:nth-child(2){
+            /*translateZ正数往前移 负数往后跑 近大远小 translateZ的单位不能写百分比(因为z轴没有参考物所以没有具体的尺寸) 只能写具尺寸px，em*/
+           transform: perspective(900px) rotateY(45deg) translateZ(-900px);
+        }
+        </style>
+</head>
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+</html>

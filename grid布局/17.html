@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珊格的流动方向</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            margin: 0 auto;
+            border: 1px solid silver;
+            width: 300px; 
+            height: 300px;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3,1fr);
+            /*行列的艰巨都是10px*/
+            /*列流动 从上到下 默认值是row，行流动*/
+            /*属性dense代表如果按照正常的流动方向有元素未被填满的话，则剩下的元素会被填满*/
+            grid-auto-flow: row dense; 
+        }
+        article div{
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            box-sizing: border-box;
+            color:white;
+            font-size:35px;
+        }
+        div:nth-child(1){
+            grid-column:  1 / span 2;
+        }
+
+        div:nth-child(2){
+            /*从第二列开始扩展到第三列*/
+            grid-column: 2 / span 1;
+        }
+    </style>
+</head>
+<body>
+    hello
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <!-- <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div> -->
+    </article>
+</body>
+</html>

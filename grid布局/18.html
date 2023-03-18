@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珊格整体对齐方式的处理</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            margin: 0 auto;
+            border: 1px solid silver;
+            width: 400px; 
+            height: 100px;
+            grid-template-columns: repeat(4, 60px);
+            /*类似于弹性盒模型的对齐处理*/
+            justify-content:space-evenly; /*水平方向*/
+            align-content: center; /*垂直方向*/
+        }
+        article div{
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            height:50px;
+            box-sizing: border-box;
+            color:white;
+            font-size:25px;
+        }
+    </style>
+</head>
+<body>
+    hello
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <!-- <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div> -->
+    </article>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>translate控制元素二维移动</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        main{
+            position:absolute;
+            left:50%;
+            top:50%;
+            width:400px;
+            height:400px;
+            margin-left: -200px;
+            margin-top:-200px;
+            border: 5px solid blue;
+        }
+        main div{
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            width:200px;
+            height:200px;
+        }
+
+        main div:nth-of-type(1){
+            background-color:#ff7979
+        }
+        
+        main div:nth-of-type(2){
+            background-color:#6ab04c;
+            /*transform控制移动，向右移动100px*/
+            /* transform: translateX(100px); */
+            /*过渡transition 1s*/
+            transition: 1s;
+        }
+        
+        main:hover div:nth-child(2){
+            /*正右负左*/
+           /* transform: translateX(100px);    */
+           /*如果添加是百分数,移动距离是该元素的尺寸乘百分数*/
+           /*translateY也基本差不多，正数往下移动，负数往上移动，百分数就是自身高的百分比*/
+           /* transform:translateX(100%); */
+           transform: translateY(100%);
+        }
+        </style>
+</head>
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+</html>

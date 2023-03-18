@@ -1,0 +1,55 @@
+p{
+    border:solid 1px #ddd;
+    padding: 10px;
+    
+    img{
+        width: 100px;
+        height: 100px;
+        clip-path: circle();
+        float:left;
+        margin: 0;
+        shape-outside: circle();
+    }
+
+    span.shape{
+        width:100px;
+        height:100px;
+        float:left;
+        // background:red;
+        padding:30px;
+        background:red;
+        // border:solid 20px red;
+        margin: 10px;
+        /*围绕着边框*/
+        // shape-outside: border-box; 
+        /*文本在内边距的边框里*/
+        // shape-outside: padding-box;
+        /*文本在内容盒子里*/
+        // shape-outside: content-box;
+        /*文本在外边距那块*/
+        shape-outside:margin-box;
+        //外边的文本挨着边框
+        // shape-outside:border-box;
+
+        /*控制浮动显示区域形状定制(circle圆形 缩小到50%,且圆心在x:100, y:0的位置)*/
+        // clip-path: circle(50% at 100% 0);
+        // clip-path:circle(50%);
+        /*椭圆*/
+        clip-path: ellipse(50% 30%);
+        //多边形 三点绘制等边三角形 polygon可定义无数的点
+        // clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      
+
+        /*控制文本内容环绕排版*/
+        // shape-outside: polygon(50% 0, 100% 100%, 0 100%); /*此时围绕浮动元素边界进行环绕*/
+        // shape-outside: circle(); /*围绕浮动元素圆形来排列*/
+        shape-outside:ellipse(50% 30%) /*围绕浮动元素椭圆来环绕*/
+    }
+
+    
+    &::after{
+       content:"";
+       display: block;
+       clear: both;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动填充和按比例划分珊格</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            width: 300px; 
+            height: 300px;
+            border:5px solid silver;
+            /*重复的时候自动填充 每一个行行高100px auto-fill*/
+            /* grid-template-rows: repeat(auto-fill, 100px); */
+            /*重复的时候自动填充 每一个列宽100px auto-fill*/
+            /* grid-template-columns: repeat(auto-fill, 100px); */
+            /* 把行等比分为3份，每一份占width/3  类似弹性盒模型的flex:1的感觉*/
+            /* grid-template-rows: repeat(3, 1fr); */
+            /*同理*/
+            /* grid-template-columns: repeat(3,1fr); */
+
+            /*行 第一个宽占1份 300*1/4=75 第二个占2份为150  第三个占1份75*/
+            grid-template-rows: 1fr 2fr 1fr;
+            /*同理*/
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+        article div{
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </article>
+</body>
+</html>

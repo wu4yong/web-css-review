@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性布局移动端通用菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height:100vh;
+            display: flex;
+            flex-direction:column;
+        }
+        main{
+            flex:1;
+            background-color: #eee; 
+        }
+        footer{
+            height:50px;
+            background-color: #ddd;
+            display:flex;
+            flex-direction: row;
+            justify-content:space-between;
+            border-top: solid 1px #ccc;
+        }
+
+        footer section{
+            flex:1; /*弹性元素*/
+            border-right: 1px solid #ccc;
+            display:flex; /*弹性容器*/
+            flex-direction: column-reverse;   
+        }
+
+        footer section:last-child{
+            border-right:none;
+        }
+
+        footer section h4{
+            flex:0 0 50px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+        }
+
+        footer section ul{
+            display:flex;
+            flex-direction:column;
+            border: solid 1px #ccc;
+            text-align: center;
+            margin-bottom: 5px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        footer section ul li{
+            flex:1 0 50px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: solid 1px #ccc;
+            cursor:pointer;
+        }
+
+        footer section ul li:last-child{
+            border-bottom: none;
+        }
+    
+    </style>
+</head>
+<body>
+     <main></main>
+     <footer>
+         <section>
+             <h4>教程</h4>
+             <ul>
+                 <li>vue</li>
+                 <li>react</li>
+                 <li>angular</li>
+            </ul>
+         </section>
+         <section>
+            <h4>数据结构</h4>
+            <ul>
+                <li>栈</li>
+                <li>链表</li>
+                <li>树</li>
+                <li>图</li>
+           </ul>
+         </section>
+         <section>
+            <h4>前端</h4>
+            <ul>
+                <li>css</li>
+                <li>node js</li>
+                <li>html</li>
+           </ul>
+         </section>
+         <section>
+            <h4>sns</h4>
+            <ul>
+                <li>facebook</li>
+                <li>instagram</li>
+                <li>youtube</li>
+                <li>wechat</li>
+                <li>weibo</li>
+           </ul>
+         </section>
+     </footer>
+</body>
+</html>

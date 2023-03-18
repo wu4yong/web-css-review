@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珊格内元素独立控制对齐方式</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            margin: 0 auto;
+            border: 1px solid silver;
+            width: 400px; 
+            height: 100px;
+            grid-template-columns: repeat(4, 100px);
+            /* justify-items:center;
+            align-items:center; */
+
+        }
+        article div{
+            /*珊格元素不给高度默认撑满*/
+            /*如果有固定宽高就没什么意义*/
+            /* height: 50px;
+            width: 50px; */
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            box-sizing: border-box;
+            color:white;
+            font-size:25px;
+            border:1px solid blueviolet
+        }
+        div:first-child{
+            /*控制单个珊格元素的对齐方式 与整体控制差不多 只是属性名变了 ...-self*/
+           justify-self: center;
+           align-self: end;
+        }
+
+        div:nth-child(4){
+            /*控制单个珊格元素的对齐方式 与整体控制差不多*/
+           justify-self: start;
+           align-self: center;
+        }
+    </style>
+</head>
+<body>
+    hello
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <!-- <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div> -->
+    </article>
+</body>
+</html>

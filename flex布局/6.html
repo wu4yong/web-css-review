@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 400px;
+            height:550px;
+            display:flex;
+            /*反转之后主轴的开始与结束的方向就互换了，row方向默认是左为主轴的开始,右为主轴的结束 column方向默认主轴是上为主轴的开始，下为主轴的结束*/
+            flex-direction: row;
+            /* flex-wrap: wrap; */
+            /*主轴的排列方式*/
+            /* justify-content: flex-start; flex-start: 对齐到主轴的开始 */
+            /* justify-content: flex-end;  对齐到主轴的结束 */
+            /*主轴的元素都居中*/
+            /* justify-content: center; */
+            /*主轴两边的元素靠边，中间的元素平均排列*/
+            /* justify-content: space-between; */
+            /*主轴元素左右两边都有相同的间距，相邻两个元素的间距是单个元素离边上距离的两倍*/
+            /* justify-content: space-around; */
+            /*主轴元素完全的平均分布 每个元素左右的间距完全相等 注意与space-around的区别*/
+            justify-content: space-evenly; 
+        }
+
+        article *{
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+            /* background-clip: content-box; */
+            font-size:35px;
+            color: white
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+     </article>
+</body>
+</html>

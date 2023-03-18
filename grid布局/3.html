@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重复绘制珊格结构</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            width: 300px; 
+            height: 150px;
+            border:5px solid silver;
+            /*这里其实是绘制4行 类似于100px 50px 100px 50px 第一行高100px，第二行高50px 第三行100px 第四行高50px*/
+            grid-template-rows: repeat(2, 100px 50px);
+            /*repeat重复5列每一个让它占20%*/
+            grid-template-columns: repeat(5, 20%);
+        }
+        article div{
+            /*不指定宽高就充满单元格*/
+            /*元素虽然是50*50,但我珊格还是100*100*/
+            /* width: 50px;
+            height: 50px; */
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </article>
+</body>
+</html>

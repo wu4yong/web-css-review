@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y,Z轴旋转</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            /*居中*/
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{ 
+            width:400px;
+            height:400px;
+            position:absolute;
+            border: 5px solid blue;
+            /*3d让我们看到z轴的方向, 透视查看*/
+            transform-style: preserve-3d;
+            transform: perspective(900px) rotateY(-45deg);
+        }
+        main div{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            width:200px;
+            height:200px;
+            transition: 1s;
+            /* transform-origin: center; */
+        }
+
+        main div{
+            background-color:#ff7979
+        }
+
+
+        main:hover  div{
+            /*沿着Y旋转*/
+            /* transform: perspective(900px) rotateY(465deg); */
+            /*沿着Z轴旋转 类似于沿着平面转圈*/
+            transform: perspective(900px) rotateZ(-259deg);
+        }
+    </style>
+</head>
+<body>
+   <main>
+       <div></div>
+   </main>
+</body>
+</html>

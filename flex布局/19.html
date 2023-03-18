@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性布局移动端通用菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height:100vh;
+            display: flex;
+            flex-direction:column;
+        }
+        main{
+            flex:1;
+            background-color: #eee; 
+        }
+        footer{
+            height:50px;
+            background-color: #ddd;
+            display:flex;
+            flex-direction: row;
+            justify-content:space-between;
+            border-top: solid 1px #ccc;
+        }
+
+        footer section{
+            flex:1;
+            border-right: 1px solid #ccc;
+        }
+
+        footer section:last-child{
+            border-right:none;
+        }
+        
+    </style>
+</head>
+<body>
+     <main></main>
+     <footer>
+         <section></section>
+         <section></section>
+         <section></section>
+     </footer>
+</body>
+</html>

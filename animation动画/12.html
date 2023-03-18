@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation-direction控制动画方向</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            background:#fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        ul{
+            list-style: none;
+            width: 600px;
+            height: 100px;
+            display: flex;
+        }
+
+        li{
+            flex:1;
+            color:#e74c3c;
+            /* border: solid 1px #ddd; */
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        li>span{
+            position: absolute;
+            bottom: 0
+        }  
+
+        li:nth-child(1)>i{
+            /*正常变换方向*/
+            animation-direction: normal;
+        }
+
+        li:nth-child(2)>i{
+            /*反方向*/
+            animation-direction: reverse;
+        }
+
+        li:nth-child(3)>i{
+            /*回到下一轮的起始点也是慢慢回去的 平滑*/
+            animation-direction: alternate;
+        }
+
+        li:nth-child(4)>i{
+            /*回到下一轮的起始点也是慢慢回去的 平滑 反方向*/
+            animation-direction: alternate-reverse;
+        }
+
+        i.fa{
+            font-size:3em;
+            animation-name:hd;
+            animation-duration:1s;
+            animation-iteration-count:infinite;
+            /*加上定位让它在原来的方向上改变*/
+            position:absolute; 
+        }
+
+        @keyframes hd{
+            to{
+                transform: scale(3);
+            }
+        }
+        
+
+    </style>
+
+</head>
+<body>
+   <ul>
+       <li>
+           <i class="fa fa-heart" aria-hidden="true"></i>
+           <span>py</span>
+       </li>
+       <li>
+           <i class="fa fa-heart" aria-hidden="true"></i>
+           <span>py</span>
+       </li>
+       <li>
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <span>py</span>
+       </li>
+       <li>
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <span>py</span>
+       </li>
+   </ul>
+</body>
+</html>

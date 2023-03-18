@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 400px;
+            height: 550px;
+            display:flex;
+            /* flex-wrap: wrap; */
+        }
+
+        /*元素缩小比例计算   每个子元素的宽200*3-外层盒子的总宽400=200的缩小距离 200*3/4缩150 200*1/4缩50 */
+        article div:nth-child(1){
+            /*缩小比例:0 不缩小*/
+            flex-shrink: 0;
+        }
+        
+        article div:nth-child(2){
+            /*缩小比例*/
+            flex-shrink: 1;
+        }
+
+        article div:nth-child(3){
+            /*缩小比例最大*/
+            flex-shrink: 3;
+        }
+        
+
+        article *{
+            /*flex-shrink代表谁也不缩小*/
+            /* flex-shrink: 1; */
+            width: 200px;
+            height: 100px;
+            background: blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+            border: 1px solid blue;
+            background-clip: content-box;
+            font-size:35px;
+            color: white
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+     </article>
+</body>
+</html>

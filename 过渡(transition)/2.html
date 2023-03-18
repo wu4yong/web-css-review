@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素css过渡状态原理</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }    
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #0fbcf9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div{
+            width:200px;
+            height:200px;
+            background: #00d8d6;
+            border: 2px solid #fff;
+            transition: 2s;
+        }
+        
+
+        div:hover{
+            /*独立进行控制hover之后的变化时间为1s，但复原的时间仍然为2s*/
+            transition: 1s;
+            border-radius: 50%;
+            width:400px;
+            height:400px;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+</html>

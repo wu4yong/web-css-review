@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preserve-3d</title>
+    <style>
+       body{
+           width:100vw;
+           height:100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: #3B3B98;
+       } 
+
+       /*一个的元素是由多个形状构成的可以把透视放在父级上*/
+       main{
+          border: 5px solid silver;
+          width:400px;
+          height:400px;
+          /*这样是操作里面的元素不好查看*/
+          /* perspective:900px; */
+
+          /*画出3d空间，z轴出现boom!*/
+          transform-style: preserve-3d;
+          transform: perspective(900px) rotateY(45deg);  
+       }
+    
+       
+
+       div{
+           position: absolute;
+           margin-right: 100px;
+           width:200px;
+           height:200px;
+           background:#f1c40f;
+       }
+
+       div:nth-child(1){
+         background:#f1c40f;
+       }
+
+       div:nth-child(2){
+         background:#2ecc71;
+         /*要加3d才能看到*/
+         transform: translateZ(500px);
+       }
+
+
+    </style>
+</head>
+<body>
+   <main>
+      <div></div>
+      <div></div>
+   </main>
+</body>
+</html>

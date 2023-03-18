@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3旋转菜单</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        body{
+            background: #2c3e50;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        nav{
+            width:200px;
+            height:200px;
+            background:#25CCF7;
+            border-radius: 50%;
+            /* position: relative; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        
+        
+        nav::after{
+            content:'史绪里';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width:200px;
+            height:200px;
+            font-size: 3em;
+            color: #fff;
+        }
+
+        
+        ul{
+            /* position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%); */
+            /*一开始隐藏菜单*/
+            transform:scale(0); 
+            width: 300px;
+            height: 300px;
+            /* background: #fff; */
+            flex-shrink: 0;
+            transition:.5s;
+        }
+
+
+        nav ul li{
+           width: 80px;
+           height: 80px;
+           background:#25CCF7;
+           border-radius: 50%;
+           position: absolute;
+           display: flex;
+           justify-content:center;
+           align-items: center;
+           font-size:3em;
+           color:white;
+           transition: 1s;
+           /*以外层元素为基准*/
+           transform-origin: 150px 150px;
+        }
+
+        nav ul span{
+            transition: 1s;
+        }
+
+        nav:hover ul{
+            /*显示出来*/
+            transform:scale(1);
+        }
+
+        nav:hover li:nth-child(1){
+            transform: rotate(40deg);
+        }
+    
+        /*让图标变正*/
+        nav:hover li:nth-child(1) span{
+            transform: rotate(320deg);
+        }
+
+        nav:hover li:nth-child(2){
+            transform: rotate(80deg);
+        }
+ 
+        nav:hover li:nth-child(2) span{
+            transform: rotate(640deg);
+        }
+
+
+
+        nav:hover li:nth-child(3){
+            transform: rotate(120deg);
+        }
+
+        nav:hover li:nth-child(3) span{
+            transform: rotate(960deg);
+        }
+
+        nav:hover li:nth-child(4){
+            transform: rotate(160deg);
+        }
+        
+        nav:hover li:nth-child(4) span{
+            transform: rotate(1280deg);
+        }
+
+        nav:hover li:nth-child(5){
+            transform: rotate(200deg);
+        }
+
+        nav:hover li:nth-child(5) span{
+            transform: rotate(1600deg);
+        }
+
+
+        nav:hover li:nth-child(6){
+            transform: rotate(240deg);
+        }
+
+        nav:hover li:nth-child(6) span{
+            transform: rotate(1920deg);
+        }
+
+        nav:hover li:nth-child(7){
+            transform: rotate(280deg);
+        }
+    
+        nav:hover li:nth-child(7) span{
+            transform: rotate(2240deg);
+        }
+
+        nav:hover li:nth-child(8){
+            transform: rotate(320deg);
+        }
+        
+        nav:hover li:nth-child(8) span{
+            transform: rotate(2560deg);
+        }
+
+        nav:hover li:nth-child(9){
+            transform: rotate(360deg);
+        }
+    
+        nav:hover li:nth-child(9) span{
+            transform: rotate(3240deg);
+        }
+    </style>
+</head>
+<body>
+    <nav>    
+     <ul>
+        <li>
+           <span>
+               <i class="fa fa-home" aria-hidden="true"></i>
+           </span>            
+        </li>
+        <li>
+            <span>
+                <i class="fa fa-joomla" aria-hidden="true"></i>
+            </span> 
+        </li>
+        <li>
+            <span>
+                <i class="fa fa-key" aria-hidden="true"></i>
+            </span> 
+        </li>
+        <li>
+            <span>
+                <i class="fa fa-laptop" aria-hidden="true"></i>
+            </span> 
+        </li>
+        <li>
+            <span>
+                <i class="fa fa-dedent" aria-hidden="true"></i>
+            </span> 
+        </li>
+        <li>
+            <span>
+                <i class="fa fa-safari" aria-hidden="true"></i>
+            </span> 
+        </li>
+        <li>
+            <span>
+                <i class="fa fa-calculator" aria-hidden="true"></i>
+            </span> 
+        </li>
+        <li>
+            <span>
+                <i class="fa fa-deviantart" aria-hidden="true"></i>
+            </span> 
+        </li>
+        <li>
+            <span>
+                <i class="fa fa-diamond" aria-hidden="true"></i>
+            </span> 
+        </li>
+     </ul>
+    </nav>
+   
+</body>
+</html>

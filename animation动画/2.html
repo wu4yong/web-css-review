@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帧顺序起始与终点帧特性</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            background:#8c7ae6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width:100px;
+            height:100px;
+            background:#fff;
+            /*帧动画应用*/
+            animation-name: py;
+            animation-duration: 2s;
+        }
+
+        /*帧动画*/
+        @keyframes py {
+            /*顺序颠倒是没关系的*/
+            /*0%和100%起始帧默认是元素的初始状态*/
+            0%{
+                background: white;
+            }
+
+            25%{
+                transform: scale(2);
+            }
+
+            65%{
+                transform: scale(1);
+                background: #0097e6;
+            }
+
+            100%{
+                background: #44bd32;
+            }
+        }
+    </style>
+</head>
+<body> 
+    <main></main>
+</body>
+</html>

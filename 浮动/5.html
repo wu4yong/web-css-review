@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用clearfix清除浮动</title>
+    <style>
+        .clearfix{
+            clear: both
+        }
+        *{
+            margin: 0;
+            padding:0;
+        }
+        main{
+            /*子元素浮动父盒子坍塌 但是漂浮的子元素还是无法逾越内边框的*/
+            border:3px solid black; 
+            /*此时就不用给父元素一直的添加高度了，它自己会感知高度的存在*/
+            /* height:220px;  */
+            width:620px;
+            margin: 0 auto;
+            padding:20px;
+        }
+        div{
+            width: 300px;
+            height: 200px;
+            box-sizing: border-box;
+        }
+
+        div:first-child{
+            border: solid 3px red;
+            /*浮动是对后面元素的影响*/
+            float: left;
+        }
+
+        div:nth-child(2){
+            background: blue;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <main>
+         <div></div>
+         <div></div>
+         <!--在这儿清楚浮动让父盒子能够感知其中的内容，就自动撑开了-->
+         <article class="clearfix"></article>
+    </main>
+</body>
+</html>

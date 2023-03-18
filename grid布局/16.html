@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用珊格区域部署元素</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            width: 100vw; 
+            height: 100vh;
+            border:5px solid silver;
+            grid-template-rows: 60px 1fr 60px;
+            grid-template-columns: 60px 1fr;
+            /*此时代表我们不用关心上面的区域因为刚好够我们用，格自格的我们不用合并(但是还是要用.来进行占位),只关心footer因为我们需要合并它*/
+            grid-template-areas:". ."
+                                ". ."
+                                "footer footer"
+        }
+       header,main,nav,footer{
+         background: blueviolet;
+         background-clip: content-box;
+         padding: 10px
+       }
+       footer{
+           /*占据下面的所有footer区域*/
+           grid-area: footer;
+           /*footer 再次使用珊格系统*/
+           display: grid;
+           grid-template-columns: repeat(4, 1fr);
+       }
+
+       footer div{
+         background: #ccc;
+         background-clip: content-box;
+         padding: 10px
+       }
+    </style>
+</head>
+<body>
+    <article>
+        <div>logo</div>
+        <div>导航</div>
+        <div>nav</div>
+        <div>main</div>
+        <!--此时下面两个div需要合并为一个div成为footer-->
+        <div>hello</div>
+        <div>hhh</div>
+    </article>
+</body>
+</html>

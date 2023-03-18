@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倾斜语法介绍</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        main{ 
+            width:400px;
+            height:400px;
+            position:absolute;
+            border: 5px solid blue;
+            transform-style: preserve-3d;
+            transform: perspective(900px);
+        }
+        main div{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            width:200px;
+            height:200px;
+            transition: 1s;
+        }
+
+        main div:nth-of-type(1){
+            background-color:#ff7979
+        }
+        
+        main div:nth-of-type(2){
+            background-color:#6ab04c;
+        }
+
+        main:hover div:nth-of-type(2){
+            /*倾斜 */
+            transform: skewX(45deg) skewY(-70deg);
+        }
+        </style>
+</head>
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+</html>

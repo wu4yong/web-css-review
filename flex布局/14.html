@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素的组合定义</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 400px;
+            height: 550px;
+            display:flex;
+            flex-direction: row;
+        }
+
+        article div{
+            /* flex-grow: 1;
+            flex-shrink: 2;
+            flex-basis: 200px; */
+            /*弹性元素规则组合定义 第一个参数flex-grow,第二个参数flex-shrink,第三个参数主轴基准*/
+            /* flex: 0 0 200px; */
+            /* width: 100px; */
+            height: 100px;
+            background: blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+            border: 1px solid blue;
+            background-clip: content-box;
+            font-size:35px;
+            color: white;
+        }
+
+         article div:nth-child(1){
+            /*flex-grow:1*/
+            /* flex:0 0 200px; */
+            flex: 1 1 200px;
+        } 
+        article div:nth-child(2){
+            /*5/6*/
+            /* flex:5; */
+            flex: 1 3 200px;
+       }
+        article div:nth-child(3){
+            /*不缩放 基准值调成100px 在横向排列row里面算是width 然后剩下多出来的宽度由另外两个元素去扩展*/
+            flex:1 0 200px;
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>11</div>
+         <div>22</div>
+         <div>33</div>
+     </article>
+</body>
+</html>

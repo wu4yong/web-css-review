@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 550px;
+            height: 550px;
+            display:flex;
+            /*如果是纵向排列则设置flex元素身上基准尺寸是控制高度的，优先级依然比height高，但是要比max-height小*/
+            flex-direction: row;
+        }
+
+        article div{
+            /*主轴的基准尺寸的优先级是大于宽度的，width和flex-basis同时存在则以flex-basis为准，但是优先级比min-width，max-width要小*/
+            flex-basis: 100px;
+            /* flex-grow: 1;*/
+            width: 50px;
+            /* max-width: 50px; */
+            height: 100px;
+            background: blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+            border: 1px solid blue;
+            background-clip: content-box;
+            font-size:35px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>11</div>
+         <div>22</div>
+         <div>33</div>
+     </article>
+</body>
+</html>

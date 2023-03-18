@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素的排列顺序</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 400px;
+            height: 500px;
+            padding:10px;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between /*主轴两边靠边中间平均*/
+        }
+
+
+        article div{
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            flex: 1;
+            font-size:55px;
+            color:white
+        }
+
+        /*order代表顺序(默认都是0) 数值越大顺序越靠后 在column的排列方式就是order越大越靠下面*/
+        article div:nth-child(1){
+            order:-2;
+        }
+        
+        article div:nth-child(2){
+            order: -1;
+        }
+    
+
+        article div:nth-child(3){
+            order:-4
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+     </article>
+</body>
+</html>

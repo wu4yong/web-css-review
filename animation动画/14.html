@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>延迟属性与帧延迟效果对比</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            background:#fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div:nth-child(1){
+            width: 200px;
+            height: 200px;
+            background:radial-gradient(at center, #e67e22, #e74c3c);
+            animation-name:hd;
+            animation-duration: 2s;
+            /*延迟2s开始执行*/
+            /* animation-delay: 2s; */
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes hd {
+           50%{
+               /*帧延迟每次动画从0到100总会延迟半s，而不是整体延迟*/
+              transform: scale(1);
+           } 
+           to {
+               transform: scale(3);
+           }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

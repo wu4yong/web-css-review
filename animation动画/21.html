@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step步进动画</title>
+    <style>
+       *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            display: grid;
+            background-color:#2c3e50;
+        }
+
+        main{
+            width: 400px;
+            height:200px;
+            justify-self: center;
+            align-self: center;
+            display: grid;
+            grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+
+        }
+
+        nav{
+            text-align:center;
+            background: #c56cf0;
+            border:solid 2px #2c3e50;
+            position: relative;
+        }
+
+        nav:nth-child(1)::before,
+        nav:nth-child(5)::before{
+            animation-name: hd;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            z-index: 2;
+        }
+
+        nav:nth-child(1)::before{
+            position: absolute;
+            content:'START';
+            width:100px;
+            height: 100px;
+            background:#fff200;
+            top:0;
+            left:0;
+            /*一帧一帧的移动*/
+            animation-timing-function: steps(4, start);
+        }
+
+        
+
+        nav:nth-child(5)::before{
+            position: absolute;
+            content:'END';
+            width:100px;
+            height: 100px;
+            background:#18dcff;
+            top:0;
+            left:0;
+            /*等一会再开始帧移动*/
+            animation-timing-function: steps(4, end);
+        }
+
+        @keyframes hd {
+            to{
+                transform: translateX(400px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+</body> 
+    <main>
+        <nav>1</nav>
+        <nav>2</nav>
+        <nav>3</nav>
+        <nav>4</nav>
+        <nav>5</nav>
+        <nav>6</nav>
+        <nav>7</nav>
+        <nav>8</nav>
+    </main>
+</html>

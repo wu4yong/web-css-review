@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画属性中间值详解</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            background:steelblue
+        }
+
+        main{
+            width:100vw;
+            height:100vh;
+            background: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+ 
+        main>nav{
+            width: 100px;
+            height: 100px;
+            background: #f1c40f;
+            animation-name:sca;
+            animation-duration: 2s;
+            border:solid 2px white
+        }
+
+
+        /*帧动画*/
+        @keyframes sca {
+            to{
+                /* transform: scale(1); */
+                /*100有中间值*/
+                width: 300px;
+                height: 300px;
+                border:solid 30px white
+            }
+        }
+        
+        
+        @keyframes clos {
+        
+            to{
+                background:darkgreen;
+            }
+        }
+
+    
+
+    </style>
+</head>
+<body> 
+    <main>
+        <nav></nav>
+    </main>
+</body>
+</html>

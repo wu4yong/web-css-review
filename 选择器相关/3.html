@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类灵活选择元素</title>
+    <style>
+        /*前面两个li起作用*/
+        /* main>ul li:nth-child(-n+2){
+            color:red
+        } */
+        /*后面两个li起作用n从0开始*/
+        /* main>ul li:nth-child(n+3){
+            color:green
+        } */
+        /*奇数1，3*/
+        /* main>ul li:nth-child(odd){
+            color:saddlebrown
+        } */
+        /*偶数2，4*/
+        /* main>ul li:nth-child(even){
+            color:skyblue
+        } */
+        /*只有下面的<h2>hello</h2>才会被选出来 记住必须是main后代的第二个元素为h2*/
+         /* main h2:nth-child(2){
+             color: deeppink
+         } */
+         /*没用因为main的直接后代的第一个元素的不是h1,直接跳过*/
+        /* main> h1:nth-child(1){
+            color: dodgerblue
+        } */
+         /*main的直接后代的元素类型为h1的第一个dom*/
+        /* main>h1:nth-of-type(1){
+            color: dodgerblue
+        } */
+
+        /*倒数第一个*/
+        /* main>ul li:nth-last-child(1){
+           color:aqua;
+        } */
+
+        /*倒数前两个*/
+        /* main>ul li:nth-last-child(-n+2){
+            color:darkmagenta;
+        } */
+        /*与nth-of-type同理*/
+        /* main>article h1:nth-last-of-type(1){
+            font-size:34px
+        } */
+        /*排除选择器 排除第二个和排除第一个 not*/
+        main>ul li:nth-child(-n+3):not(:nth-child(2)):not(:first-child){
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <ul>
+            <li>react</li>
+            <li>vue</li>
+            <li>node</li>
+            <li>css</li>
+        </ul>
+        <article>
+            <h1>py</h1>
+            <h2>hello</h2>
+            <aside>
+                <h2>hello</h2>
+                <h3>你好</h3>
+            </aside>
+            <h1>test css</h1>
+            <span>sss</span>
+        </article>
+        <h1>hello</h1>
+    </main>
+</body>
+</html>

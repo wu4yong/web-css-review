@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+        /*选择含有属性title的h2*/
+        /* h2[title] {
+            color: red
+        } */
+        /*选择含有属性title且值为panyue的h2*/
+        /* h2[title='panyue']{
+            color: red
+        } */
+        /*选择含有属性title且值只要包含panyue就可以，不需要panyue是个完整单词的h2*/
+        /* h2[title*='panyue']{
+           color:red
+        } */
+        /*选择含有属性title且值要包含panyue完整的单词才可以*/
+        /* h2[title~='panyue']{
+            color: red;
+        } */
+        
+        /*选择属性title值是title或者以title-开头*/
+        /* h2[title|='panyue']{
+            color: green
+        } */
+
+        /*以panyue开头*/
+        /* h2[title^='panyue']{
+            color: red
+        } */
+
+        /*以panyue结尾*/
+        /* h2[title$='panyue']{
+            color: red
+        } */
+    </style>
+</head>
+<body>
+   <main>
+      <h2 title="+panyue-jello">hello css</h2> 
+      <article>
+          <h1>py</h1>
+      </article>
+      <h2 title="panyue-=*(!!!!panyue">hello javascript</h2> 
+   </main>
+</body> 
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        main{
+            /*子元素浮动父盒子坍塌 但是漂浮的子元素还是无法逾越内边框的*/
+            border:3px solid black; 
+            height:220px; 
+            width:620px;
+            margin: 0 auto;
+            padding:20px;
+        }
+        span{
+            border:solid 2px blueviolet;
+            /*行级元素加上宽度和高度是没有啥效果的*/
+            width:300px;
+            height:50px;
+            /*但是float之后会自动变为块级元素*/
+            float: left;
+        }
+
+
+        span:nth-child(2){
+            float: right;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <main>
+         <span>hello</span>
+         <span>hdcms</span>
+    </main>
+</body>
+</html>

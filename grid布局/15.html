@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用珊格区域部署元素</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            width: 100vw; 
+            height: 100vh;
+            border:5px solid silver;
+            grid-template-rows: 60px 1fr 60px;
+            grid-template-columns: 60px 1fr;
+            /*注意此时的header此时线会被定义成header-start，结束位置会被定义成header-end*/
+            grid-template-areas: "logo header"
+                                 "nav main"
+                                 "footer  footer";
+            
+        }
+            
+       header,footer{
+         background: blueviolet;
+         background-clip: content-box;
+         padding: 10px
+       }
+
+
+       header{
+           /*占据上面的所有header区域*/
+           /*将header直接填满主体*/
+           /* grid-area: header-start/header-start/main-end/main-end; */
+           /*将logo区域布满下面的nav区*/
+           /* grid-area: logo-start/logo-start/nav-end/nav-end; */
+           grid-area: header-start/header-start/main-end/main-end;
+       }
+    
+       footer{
+           /*占据下面的所有footer区域*/
+           grid-area: footer;
+           /*footer 再次使用珊格系统*/
+           display: grid;
+           grid-template-columns: repeat(4, 1fr);
+       }
+
+       footer div{
+         background: #ccc;
+         background-clip: content-box;
+         padding: 10px
+       }
+    </style>
+</head>
+<body>
+    <article>
+       <header></header>
+       <footer>
+           <div>1</div>
+           <div>2</div>
+           <div>3</div>
+           <div>4</div>
+       </footer>
+    </article>
+</body>
+</html>

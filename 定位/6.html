@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多级定位的影响</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        article{
+            border: solid 8px blueviolet;
+            width:400px;
+            height:400px;
+            margin: 100px;
+            position: relative;
+        }
+        section{
+            /*相对定位(相对于原来在文档流中的位置)*/
+            position: relative;
+            background: #ddd;
+            width: 100%;
+            height: 100%;
+            /*参照这个元素(绝对)定位的元素也会因为它的偏移跟着它一起移动*/
+            left: 100px;
+            top:300px;
+        }
+        nav{
+            background: blueviolet;
+            width: 200px;
+            height: 200px;
+            /*参考离我最近的有position的父元素*/
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <section>
+            <!--参考section-->
+            <nav>
+            
+            </nav> 
+        </section>
+        <!--参考article-->
+        <nav>
+            
+        </nav> 
+    </article>
+</body>
+</html>

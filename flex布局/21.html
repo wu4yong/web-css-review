@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏实例</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        nav{
+            width:1200px;
+            height:60px;
+            background-color: #f3f3f3;
+            box-shadow: 0 0 0 rgba(0,0,0,.3);
+            margin: 0 auto;
+            display:flex;
+        }
+        ul{
+            list-style:none;
+            display:flex;
+            align-items: center;
+        }
+
+        ul:nth-child(1){
+            display:flex;
+            /* margin-right:auto ; */
+            flex:1; /*自动占用剩余内容*/
+        }
+
+        ul:nth-child(1)>li{
+            margin: 0 10px;
+        }
+    
+        ul:nth-child(2)>li{
+           background: #9b59b6;
+           border-radius: 50%;
+           width: 50px;
+           height: 50px;   
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>主页</li>
+            <li>视频</li>
+            <li>sns</li>
+            <li>live</li>
+        </ul>
+        <ul>
+            <li></li>
+        </ul>
+    </nav>
+</body>
+</html>

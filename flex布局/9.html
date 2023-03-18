@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 550px;
+            height: 550px;
+            display:flex;
+            flex-direction:row;
+            align-items: flex-end;
+        }
+
+        /*后代元素第一个div*/
+        article :first-child{
+           /*设置单个元素的交叉轴对齐方式*/
+           /*单个元素对齐到交叉轴中间*/
+           /* align-self: center;  */
+           /*单个元素对齐到交叉轴开始位置*/
+           /* align-self: flex-start;  */
+           /*单个元素对齐到交叉轴结束位置*/
+           /* align-self: flex-end; */
+           /*单个元素交叉轴拉伸*/
+           /* align-self:stretch;
+           height:auto; */
+           align-self:flex-start
+        }
+
+        article :nth-child(2){
+            align-self:center;
+        }
+
+        article :last-child{
+            align-self: flex-end;
+        }
+
+        article *{
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+            /* background-clip: content-box; */
+            font-size:35px;
+            color: white
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+     </article>
+</body>
+</html>

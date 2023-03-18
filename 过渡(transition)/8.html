@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>steps步进帧动画过渡效果</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }    
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #0fbcf9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div{
+            width:200px;
+            height:200px;
+            background: #00d8d6;
+            border:2px solid #fff;
+            transition-duration: 3s;
+            /*默认ease 越来越慢*/
+            /* transition-timing-function: ease; */
+            /*线性 平均*/
+            /* transition-timing-function: linear; */
+            /*ease-in 先慢后快*/
+            /* transition-timing-function: ease-in; */
+            /*ease-out 先快后慢*/
+            /* transition-timing-function: ease-out; */
+            /*ease-in-out 两边慢 中间快*/
+            /* transition-timing-function: ease-in-out; */
+
+            /*3步 3帧在3s内完成 不平滑*/
+            /* transition-timing-function: steps(3, start); */
+            
+            /*end代表鼠标放上去(起初的时候)不动 后面才开始，一样是3帧在3s内完成*/
+            /* transition-timing-function:steps(3, end); */
+
+            /* transition-timing-function: step-start; 和steps(1,start)一样 */
+            /* transition-timing-function: step-end; 和steps(1,end)一样 */
+            
+        }
+        
+        div:hover{
+            border-radius: 50%;
+            width:400px;
+            height:400px;
+            background: #ff5e57;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+</html>

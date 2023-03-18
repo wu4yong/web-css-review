@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 550px;
+            height: 550px;
+            display:flex;
+            flex-direction:column;
+        }
+
+
+        article div:nth-child(1){
+            /*第一个元素此时不参与剩余空间的分配，此时就是剩下两个元素均等分配剩余的空间*/
+            flex-grow: 0;
+        }
+
+        article div:nth-child(2){
+            /*占剩余空间的1/4*/
+            flex-grow: 1;
+        }
+
+        article div:nth-child(3){
+            /*占剩余空间的3/4*/
+            flex-grow: 3;
+        }
+
+        article *{
+            /*单个弹性元素可用空间分配*/
+            /*flex-grow:1 代表这里剩余空间分成3份，平均分配给每个元素*/
+            /* flex-grow: 1; */
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+            border: 1px solid blue;
+            background-clip: content-box;
+            font-size:35px;
+            color: white
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+     </article>
+</body>
+</html>

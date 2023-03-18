@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition-duration</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }    
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #0fbcf9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div{
+            width:200px;
+            height:200px;
+            background: #00d8d6;
+            border:2px solid #fff;
+            /* transition: 2s; */
+
+            /*两个数值就代表奇数第一个 偶数第二个 例如下面background,height过渡200ms， width,border-radius过渡3s*/
+            /*如果三个，就依次设置，background 200ms width:3s height:1s  从头来！！border-radius:200ms*/
+            /* transition-duration: 200ms,3s; */
+            /* transition-duration: 200ms,3s,1s; */
+            /*过渡时间与过渡属性数量相等的话，则一对一匹配, 多写时间则舍去*/
+            transition-duration: 200ms,3s,1s,4s;
+            transition-property: background, width, height, border-radius;
+        }
+        
+
+        div:hover{
+            /*此时没有过渡*/
+            border-radius: 50%;
+            /*存在中间值就会有过渡*/
+            width:400px;
+            height:400px;
+            /*ok*/
+            background: #ff5e57;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+</html>

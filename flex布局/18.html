@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位元素在弹性布局中的表现</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 400px;
+            height: 500px;
+            padding:10px;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between /*主轴两边靠边中间平均*/
+        }
+
+
+        article div{
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            flex: 1;
+            font-size:55px;
+            color:white
+        }
+
+        article div:nth-child(1){
+            /*不可能即让它弹性布局又让它绝对定位*/
+            position: relative; /*原来的空间位会保留，偏移量在原来的空间位之上*/
+            background-color: #000;
+            /* z-index: -2; */
+            left: 100px;
+            top: 200px;
+        }
+
+    </style>
+</head>
+<body>
+     <article>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+     </article>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 550px;
+            height: 250px;
+            display:flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            /*控制多行的时候交叉轴的对齐方式*/
+            /*统一靠到交叉轴开始的位置*/
+            /* align-content: flex-start; */
+            /*统一靠到交叉的结束的位置*/
+            /* align-content: flex-end; */
+            /*靠到中心*/
+            /* align-content: center; */
+            /*两边对齐 中间平均分布*/
+            /* align-content: space-between; */
+            /*每个元素的上下都有间距，元素之间的间距成倍*/
+            /* align-content: space-around; */
+            /*每个元素的上下都有间距，间距完全的相等*/
+            align-content: space-evenly;
+        }
+
+        article *{
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+            /* background-clip: content-box; */
+            font-size:35px;
+            color: white
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+         <div>4</div>
+         <div>5</div>
+     </article>
+</body>
+</html>

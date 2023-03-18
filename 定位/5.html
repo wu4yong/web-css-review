@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控制元素居中的几种方式</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        article{
+            border: solid 8px blueviolet;
+            width:400px;
+            height:400px;
+            margin: 100px;
+            position: relative;
+        }
+        nav{
+            background: blueviolet;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            /*居中公式: left:父元素的宽-子元素宽 / 2  top:父元素的高-子元素高 / 2*/
+            /* left:100px;
+            top:100px; */
+            top:50%;
+            left:50%;
+            /*向上和向左走这个元素的高的一半和宽的一般*/
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <nav></nav>
+    </article>
+</body>
+</html>

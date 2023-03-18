@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d立方体</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        main{ 
+            width:200px;
+            height:200px;
+            position:absolute;
+            transform:perspective(900px);
+            transform-style: preserve-3d;
+            transition: 2s;
+            transform-origin: center center 100px;
+        }
+
+        body:hover main{
+            transform:  rotateY(150deg) rotateX(234deg);
+        }
+    
+        main div{
+            position: absolute;
+            width:200px;
+            height:200px;
+            background:#27ae60;
+            font-size:3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: center center 100px; 
+            opacity: .8;
+        } 
+
+        div:nth-child(1){
+            transform: rotateY(90deg);
+            background:#1B9CFC;
+        }
+
+        div:nth-child(2){
+            transform: rotateY(180deg);
+            background:#FD7272;
+        }
+        div:nth-child(3){
+            transform: rotateY(270deg);
+            background:#58B19F;
+        }
+        div:nth-child(4){
+            transform: rotateY(360deg);
+            background:#D6A2E8;
+        }
+        
+        div:nth-child(5){
+            transform: rotateX(90deg);
+            transform-origin: top;
+            background:#182C61;
+        }
+        div:nth-child(6){
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+            background:#FC427B;
+        }
+        </style>
+</head>
+<body>
+    <main>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+         <div>4</div>
+         <div>5</div>
+         <div>6</div>
+    </main>
+</body>
+</html>

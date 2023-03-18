@@ -1,0 +1,95 @@
+header{
+    border-bottom: solid 5px #3498db;
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    .navbar{
+        display: flex;
+        // height: 60px;
+        padding:1rem 0;
+        align-items: center;
+        
+        .logo{
+            color:#3498db;
+            font-weight: bold;
+            margin-right: 20px;
+            font-size: 1.3rem;
+            &+label{
+               display: none;
+               &+input{
+                   display: none;
+               }
+            }
+        }
+
+        .collapse{
+           display: flex;
+           //撑满剩余空间 flex-grow
+           flex-grow: 1;
+           .links{
+               display: flex;
+               margin-right: auto;
+               font-weight: bold;
+                li{
+                 margin: 0 10px;
+                 a{
+                   color:#777;
+                   &:hover{
+                       color:#333;
+                   }
+                 }
+               }
+           }
+           .form{
+               a{
+                   border:solid 1px #3498db;
+                   border-radius: .3rem;
+                   padding:.3rem 1rem;
+                   color:#3498db;
+                   &.form-bg{
+                       background:#3498db;
+                       color:white;
+                   }
+               }
+           }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 968px){
+    header{
+        .navbar{
+            flex-flow: row wrap;
+            .logo{
+                margin-right: auto;
+                &+label{
+                   display: block;
+                   border:solid 1px #ddd;
+                   padding:.5rem 1rem;
+                   color:#555;
+                   cursor:pointer;
+                   &+input{
+                       display: none;
+                   }
+                   //当checkbox选中下面的菜单展示
+                   &+input:checked{
+                      &+.collapse{
+                          display:block;
+                      }
+                   }
+                }
+            }
+            .collapse{
+               display:none;
+               width: 100%;
+               flex-flow:column;
+               .links{
+                   flex-direction: column;
+                   margin-bottom: 1.5rem;
+                   li{
+                       margin: .5rem 0;           
+                   }
+               }
+            }
+        }
+    }
+}

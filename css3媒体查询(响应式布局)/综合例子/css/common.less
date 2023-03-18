@@ -1,0 +1,70 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+//给根元素html设置基础样式
+:root{
+    //root就类似于html根元素
+    font-size:15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+   list-style: none;
+}
+
+
+//定义栅格易于扩展
+.row{
+    display: grid;
+    //重复的12列
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.col-12{
+    grid-column: span 12; //最大的列占12个格子
+  }
+  .col-11{
+    grid-column: span 11; 
+  }
+  .col-10{
+    grid-column: span 10; 
+  }
+  .col-9{
+    grid-column: span 9; 
+  }
+  .col-8{
+    grid-column: span 8; 
+  }
+  .col-7{
+    grid-column: span 7; 
+  }
+  
+  .col-6{
+    grid-column: span 6; 
+  }
+  
+  .col-5{
+    grid-column: span 5; 
+  }
+  
+  .col-4{
+    grid-column: span 4; 
+  }
+  
+  .col-3{
+    grid-column: span 3; 
+  }
+  
+  .col-2{
+    grid-column: span 2; 
+  }
+  
+  .col-1{
+    grid-column: span 1; 
+  }
+  

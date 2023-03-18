@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贝塞尔曲线控制动画速率</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            display: grid;
+            background:#34495e;
+            grid-template-rows: 1fr/1fr
+
+        }
+
+        ul{
+            display: grid;
+            grid-template: 1fr / repeat(6, 1fr);
+            list-style: none;
+            gap:10px;
+        }
+
+        li{
+            background:#e67e22;
+            /* height:50px; */
+            animation-name: move;
+            animation-duration: 5s;
+            /*默认ease*/
+            animation-iteration-count: infinite;
+        }
+
+        li:nth-child(1){
+            /*慢 -> 快 -> 慢 -> 非常慢*/
+            animation-timing-function: ease;
+        }
+
+        li:nth-child(2){
+            /*线性 速率一致*/
+            animation-timing-function: linear;
+        }
+
+        li:nth-child(3){
+            /*先慢到快*/
+            animation-timing-function: ease-in;
+        }
+
+        li:nth-child(4){
+            /*先快到慢*/
+            animation-timing-function: ease-out;
+        }
+
+        li:nth-child(5){
+            /*中间快两边慢*/
+            animation-timing-function: ease-in-out;
+        }
+
+
+        li:nth-child(6){
+            animation-timing-function:cubic-bezier(0,.66,.94,.56);
+        }  
+
+        @keyframes move{
+            to{
+                transform: translateY(90vh);
+            }
+        }
+
+    </style>
+</head>
+<body>
+  <ul>
+      <li>ease</li>
+      <li>linear</li>
+      <li>ease-in</li>
+      <li>ease-out</li>
+      <li>ease-in-out</li>
+      <li>自定义</li>
+  </ul>
+</body>
+</html>

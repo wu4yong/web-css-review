@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动的小方块</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            background:#8c7ae6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width:400px;
+            height:400px;
+            border:1px solid #fff;
+            
+        }
+
+
+        main>nav{
+            width:100px;
+            height:100px;
+            background:#ff3f34;
+            animation-name: py;
+            animation-duration:2s;
+        }
+        
+        
+
+        /*帧动画*/
+        @keyframes py {
+            0%{
+                transform: translate(0,0);
+            }
+            25%{
+                transform: translateX(300px);
+            }
+
+            50%{
+                transform: translate(300px, 300px);
+            }
+            75%{
+                /*对比元参照点在x轴方向不需移动*/
+                transform: translateY(300px);
+            }
+            100%{
+                transform: translate(0,0);
+            }
+        }
+        
+    </style>
+</head>
+<body> 
+    <main>
+        <nav></nav>
+    </main>
+</body>
+</html>

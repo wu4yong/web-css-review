@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用珊格区域部署元素</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            width: 100vw; 
+            height: 100vh;
+            border:5px solid silver;
+            /*上面60px 下面60px 中间自适应*/
+            grid-template-rows: 60px 1fr 60px;
+            /*左边的列是60px 右边自适应*/
+            /*总体三行辆列的结构*/
+            grid-template-columns: 60px 1fr;
+            /*定义区域*/
+            /*划分区域 上中下依次起名*/
+            grid-template-areas: "header header"
+                                 "nav main"
+                                 "footer  footer";
+            
+        }
+        /* article div{
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+        } */
+        /* div:first-child*/
+            /*使用区域定位*/
+            /* grid-area: 1/1/2/4; */
+            /* 起始行 / 起始列 / 结束行 / 结束列 */
+            /* grid-area: r 2 / c 2 / r 3 / c 3; */
+            
+       header,main,nav,footer{
+         background: blueviolet;
+         background-clip: content-box;
+         padding: 10px
+       }
+       header{
+           /*占据上面的所有header区域*/
+           grid-area: header;
+       }
+       nav{
+           grid-area:  nav;
+       }
+       main{
+           grid-area:  main;
+       }
+       footer{
+           /*占据下面的所有footer区域*/
+           grid-area: footer;
+           /*footer 再次使用珊格系统*/
+           display: grid;
+           grid-template-columns: repeat(4, 1fr);
+       }
+
+       footer div{
+         background: #ccc;
+         background-clip: content-box;
+         padding: 10px
+       }
+    </style>
+</head>
+<body>
+    <article>
+       <header></header>
+       <nav></nav>
+       <main></main>
+       <footer>
+           <div>1</div>
+           <div>2</div>
+           <div>3</div>
+           <div>4</div>
+       </footer>
+    </article>
+</body>
+</html>

@@ -1,0 +1,19 @@
+/*公共样式*/
+@import url(common.css); 
+/*导航条样式*/
+@import url(navbar.css);
+/*控制外边距的样式*/
+@import url(margin.css);
+/*控制卡片的样式*/
+@import url(card.css);
+/*控制文字标题的样式*/
+@import url(title.css);
+/*控制卡片中控制每一个条目的样式*/
+@import url(list-group.css);
+/*控制卡片底部页码的样式*/
+@import url(page.css);
+/*超小尺寸 小尺寸 中等尺寸 大尺寸 响应式布局*/
+@import url(small-x.css) only screen and (max-width:768px);
+@import url(small.css) only screen and (min-width:768px);
+@import url(medium.css) only screen and (min-width:960px);
+@import url(big.css) only screen and (min-width:1200px);

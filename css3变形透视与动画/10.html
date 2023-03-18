@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用scale3d同时改变3轴</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{ 
+            width:400px;
+            height:400px;
+            position:absolute;
+            border: 5px solid blue;
+            transform:perspective(900px) rotateY(45deg);
+            transform-style: preserve-3d;
+            transition: 2s;
+        }
+
+        main nav{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            transform-origin: center;
+        }
+
+        main nav:nth-of-type(1){
+            background-color:#ff7979;
+        }
+
+        main nav:nth-child(2){
+            background-color:#54a0ff;
+            transition: .5s;
+            transform: translateZ(-300px);
+        }
+
+        main:hover nav:nth-of-type(2){
+           transform: translateZ(-300px);
+        }
+
+        body:hover main{
+            /*拉伸缩放的时候是轴被拉伸*/
+            /*scale3d控制三个轴缩放 x缩放原来的2倍，y缩放原来的2倍， z缩放值原来的8倍(拉长原来z轴的8倍)*/
+            transform:perspective(900px) rotateY(45deg) scale3d(2,2,8);
+            
+        }
+
+              
+    </style>
+</head>
+<body>
+    <main>
+        <nav></nav>
+        <nav></nav>
+    </main>
+</body>
+</html>

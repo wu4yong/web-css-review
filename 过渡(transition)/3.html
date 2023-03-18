@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定制css过渡效果属性</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }    
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #0fbcf9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            width: 600px;
+            height: 600px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        div{
+            width:200px;
+            height:200px;
+            background: #00d8d6;
+            border: 2px solid #fff;
+            /* transition: 2s; */
+
+            /*只让背景有过渡，且过渡时间为2s*/
+            /*全部属性全变:transition-property:all或者你默认不写*/
+            transition-property: background, width, height, border-radius;
+            transition-duration:2s;
+        }
+
+        
+        
+        div:first-child{
+           transition-property: all;
+           
+        }
+
+        div:last-child{
+            transition-property: none;
+        }
+
+
+        main:hover div{
+            border-radius: 50%;
+            background: #fff;
+            width:400px;
+            height:400px;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backface-visibility控制元素背面隐藏效果</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        main{ 
+            width:400px;
+            height:400px;
+            position:absolute;
+            border: 5px solid blue;
+            perspective:900px;
+            transform-style: preserve-3d;
+            transition: 2s;
+        }
+    
+        main div{
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left: -100px;
+            margin-top:-100px;
+            width:200px;
+            height:200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            /*背面不显示*/
+            /*反转卡片*/
+            backface-visibility: hidden;
+            transition:1s
+        } 
+
+        main div:nth-of-type(1){
+            background-color:#ff7979;
+        }
+
+        main div:nth-of-type(2){
+            background-color:#6ab04c;
+            transform: rotateY(180deg);
+        } 
+
+        body:hover main{
+            transform: rotateY(-180deg)
+        }
+/* 
+        body:hover main div:nth-of-type(1){
+            transform: rotateY(-180deg);
+        }
+
+        body:hover main div:nth-of-type(2){
+            transform: rotateY(0deg);
+        } */
+        </style>
+</head>
+<body>
+    <main>
+        <div>1</div>
+        <div>2</div>
+    </main>
+</body>
+</html>

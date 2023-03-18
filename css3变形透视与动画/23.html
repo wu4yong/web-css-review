@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d变形参考点使用</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        main{ 
+            width:400px;
+            height:400px;
+            position:absolute;
+            border: 5px solid blue;
+            transform: perspective(900px) rotateY(45deg) rotateX(45deg);
+            transform-style: preserve-3d;
+        }
+
+        main div{
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            width:200px;
+            height:200px;
+            transition: 1s;
+
+            /*默认的旋转参考点是中心*/
+            
+
+            /*设置2d变换参考点*/
+            /* transform-origin: center center; */
+            /*此时参考点在左上*/
+            /* transform-origin: left top; */
+
+            /*右边的中间*/
+            /* transform-origin: right center; */
+
+            /*x:0 y:0 左上*/
+            /* transform-origin: 0 0; */
+            /* x:100% y:100% 右下*/
+            /* transform-origin: 100% 100%; */
+        
+            /*还可以在元素之外*/
+            /*x:200% y:200% */
+            /* transform-origin: 200% 200%;  */
+            
+            /*x轴右侧 y轴底部 第三个参数z轴变化(具体数值，不能是百分比，因为z轴是无限的)*/
+            transform-origin: left bottom -100px;
+            
+        }
+
+
+
+        main div:nth-of-type(1){
+            background-color:#ff7979
+        }
+        
+        main div:nth-of-type(2){
+            background-color:#6ab04c;
+        }
+        
+        main:hover div:nth-child(2){
+           /*rotate围绕中心旋转 2d平面转 注意此时的旋转参考点是元素正中心 center center*/
+           /*正值顺时针，负值逆时针*/
+           /* transform: rotate(145deg); */
+
+           /*不仅旋转 倾斜也是有参考点的*/
+           transform: rotateY(360deg);
+        }
+
+        
+        </style>
+</head>
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+</html>

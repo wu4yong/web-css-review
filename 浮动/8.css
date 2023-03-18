@@ -1,0 +1,35 @@
+p {
+  border: solid 1px #ddd;
+  padding: 10px;
+}
+p img {
+  width: 100px;
+  height: 100px;
+  clip-path: circle();
+  float: left;
+  margin: 0;
+  shape-outside: circle();
+}
+p span.shape {
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding: 30px;
+  background: red;
+  margin: 10px;
+  /*围绕着边框*/
+  /*文本在内边距的边框里*/
+  /*文本在内容盒子里*/
+  /*文本在外边距那块*/
+  shape-outside: margin-box;
+  /*控制浮动显示区域形状定制(circle圆形 缩小到50%,且圆心在x:100, y:0的位置)*/
+  /*椭圆*/
+  clip-path: ellipse(50% 30%);
+  /*控制文本内容环绕排版*/
+  shape-outside: ellipse(50% 30%) /*围绕浮动元素椭圆来环绕*/;
+}
+p::after {
+  content: "";
+  display: block;
+  clear: both;
+}

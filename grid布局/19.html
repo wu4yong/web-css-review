@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珊格内元素整体控制技巧</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            margin: 0 auto;
+            border: 1px solid silver;
+            width: 400px; 
+            height: 100px;
+            grid-template-columns: repeat(4, 100px);
+            /*每一个珊格的水平轴开始*/
+            /* justify-items: start; */
+            /*结束*/
+            /* justify-items: end; */
+            /*中间*/
+            /* justify-items:center; */
+            /*默认拉伸: stretch,撑满整个珊格 */
+            justify-items:center;
+
+            /*垂直方向*/
+            /*贴在列开始(上方)*/
+            /* align-items: start; */
+            /*下方*/
+            /* align-items: end; */
+            /*中心*/
+            /* align-items: center; */
+            /*align-items默认是stretch*/
+
+            align-items:center;
+
+        }
+        article div{
+            /*珊格元素不给高度默认撑满*/
+            /*如果有固定宽高就没什么意义*/
+            /* height: 50px;
+            width: 50px; */
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+            box-sizing: border-box;
+            color:white;
+            font-size:25px;
+            border:1px solid blueviolet
+        }
+        
+    </style>
+</head>
+<body>
+    hello
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <!-- <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div> -->
+    </article>
+</body>
+</html>

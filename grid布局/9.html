@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珊格固定命名放置元素</title>
+    <style>
+        article {
+            display: grid; /*变成珊格容器*/
+            width: 300px; 
+            height: 300px;
+            border:5px solid silver;
+            grid-template-rows:[r1-start] 100px [r1-end r2-start] 100px [r2-end r3-start] 100px [r3-end];
+            grid-template-columns: [c1-start] 100px [c1-end c2-start] 100px [c2-end c3-start] 100px [c3-end];
+        }
+        article div{
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+        }
+        div:first-child{
+            /*使用固定命名放置元素*/
+            /*第二行 第二列*/
+            grid-row-start: r2-start;
+            grid-column-start: c1-end;
+            grid-column-end: c2-end;
+            grid-row-end: r2-end;
+        }
+    </style>
+</head>
+<body>
+    hello
+    <article>
+        <div>1</div>
+    </article>
+</body>
+</html>

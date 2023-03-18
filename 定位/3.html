@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            border: solid 5px blue;
+            width:400px;
+            height:400px;
+            padding: 30px;
+            margin-top:100px;
+            /*如果夫元素有定位属性，子元素的绝对定位就会参照它*/
+            position: relative;
+        }
+        p img{
+           width:30px;
+           height:30px;
+           border-radius: 50%;
+           /*绝对定位更加的灵活 它之前的空间位是丢失的这一点与相对定位不同 默认参照页面body进行定位*/
+           /*此时不受p元素的影响*/
+           position:absolute;
+           /* top:-10px;
+           right:-300px */
+           /* top:0; */
+           /* left:0; */
+           /* left:50%; */
+           right: 0;
+           /* top:-30px */
+           top:0;
+        }
+        
+    </style>
+</head>
+<body>
+   <p>
+       <img src="https://pix10.agoda.net/geo/city/3987/1_3987_02.jpg?s=1920x822">
+       It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+   </p>
+</body>
+</html>

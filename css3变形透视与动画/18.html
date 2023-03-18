@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态网站logo制作(使用旋转)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            background: #273c75;
+        }
+
+        main div{
+            cursor: pointer;
+            color:#ecf0f1;
+            font-size:2em;
+        }
+
+        main>div>strong{
+            /*谁应用到了动画就给谁加上过渡时间*/
+            transition: 1s;
+            /*注意行级元素不会旋转，要变为块级元素*/
+            display: inline-block; 
+            width: 40px;
+            height: 45px;
+            text-align: center;
+            color:white;
+            border-radius: 50%;
+        }
+
+        main div>strong:nth-of-type(1){
+            background: #44bd32;
+        }
+
+
+        main div>strong:nth-of-type(2){
+            background: #1abc9c;
+        }
+
+        main div:hover strong:nth-of-type(1){
+            /*2d平面旋转*/
+            transform:rotate(360deg);
+        }
+
+        main div:hover strong:nth-of-type(2){
+            /*2d平面旋转*/
+            transform:rotate(-360deg);
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <main>
+       <div>
+           <strong>h</strong>ou<strong>d</strong>unren.com
+        </div> 
+    </main>
+    
+</body>
+</html>

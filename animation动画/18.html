@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改关键帧速制作弹跳球</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100vw;
+            height:100vh;
+            background:#4b4b4b;
+            display: grid;
+            grid-template: 1fr / repeat(5,1fr); 
+        }
+
+        nav{
+            grid-column: 3 / 4;
+            height: 50px;
+            width:50px;
+            background:#e67e22;
+            border-radius: 50%;
+            /*水平方向对齐*/
+            justify-self: center;
+            transform: translateY(90vh);
+            animation-name:funkup;
+            animation-duration:2s;
+            animation-iteration-count: infinite;
+            /*最终停在100%帧的位置*/
+            animation-fill-mode: forwards; 
+        }
+
+        @keyframes funkup{
+            0%{
+                transform: translateY(0);
+                transition-timing-function: ease-in;
+            }
+            15%,45%,75%,85%,100%{
+                transform: translateY(90vh);
+                transition-timing-function: ease-out;
+            }
+            30%{
+                transform: translateY(10vh);
+                transition-timing-function: ease-in;
+            }
+            60%{
+                transform: translateY(40vh);
+                transition-timing-function: ease-in;
+            }
+            95%{
+                transform: translateY(75vh);
+                transition-timing-function: ease-in;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav></nav>
+</body>
+</html>

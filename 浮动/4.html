@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动对元素的影响</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+
+        div{
+            width:200px;
+            height:200px
+        }
+
+        div.red{
+            border: solid 2px red;
+            /* float:left; */
+            float: right;
+        }
+
+        div.green{
+            border: solid 2px green;
+            float: left;
+            clear: right; /*清除上方红色块右浮动给我下面的green块带来的影响*/
+        } 
+
+        div.blue{
+            background: blue;
+            clear: left; /*清除上方green块左侧浮动给我带来的影响，让蓝色块不会盖到绿色块上 右侧也一样*/
+        } 
+        
+    </style>
+</head>
+<body>
+    <main>
+         <div class="red"></div>
+         <div class="green"></div>
+         <div class="blue"></div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性元素方向</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        article{
+            border: solid 5px silver;
+            width: 550px;
+            height:550px;
+            display:flex;
+            flex-direction: row;
+            /* row:交叉轴(竖直)的起点默认在上方,终点在下方 row-reverse就颠倒一下位置 */
+            /* column: 交叉轴(水平)的起点默认在左方,终点在右方 row-reverse就颠倒一下位置*/
+            /*对齐到交叉轴的开始*/
+            /* align-items: flex-start; */
+            /*对齐到交叉轴的结束*/
+            /* align-items: flex-end; */
+            /*对齐到交叉轴的中心*/
+            /* align-items: center; */
+            /*让元素拉伸来适应交叉轴的高度或宽度，但是如果你给子元素设置了高度(row)或宽度(colum)，这个就不会起作用，因为被覆盖了*/
+            /* align-items: stretch; */
+            
+            /*元素水平居中*/
+            justify-content: center;
+            align-items: center;
+        }
+
+        article *{
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+            padding:10px;
+            box-sizing: border-box;
+            /* background-clip: content-box; */
+            font-size:35px;
+            color: white
+        }
+    </style>
+</head>
+<body>
+     <article>
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+     </article>
+</body>
+</html>

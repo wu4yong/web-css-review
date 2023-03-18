@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单的样式</title>
+    <style>
+        input:disabled{
+            border: 1px solid #ddd !important;
+        }
+        /* input:enabled{
+            background:green
+        } */
+        input:checked+label{
+            color: green;
+        }
+        
+         
+         input{
+             outline:none
+         }
+         /*可不填的input*/
+         input:optional{
+             border: solid 1px green
+         }
+         /*必填的input*/
+         input:required{
+             border: 1px solid red;
+         }
+         /*有效的输入*/
+         input:valid{
+             background: yellow
+         }
+         /*无效的输入或者不输入的样式*/
+         input:invalid{
+             background:darkred
+         }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" disabled/>
+        <input type="text"/>
+        <hr/>
+        <input type="radio" name='sex' id="boy"/>
+        <label for="boy">男</label>
+        <input type="radio" name='sex' checked id="girl"/>
+        <label for="girl">女</label>
+        <hr/>
+        <input type="text" required/>
+        <hr/>
+        <input type="email"/>
+        <hr/>
+        <button>
+            保存
+        </button>
+    </form>
+</body>
+</html>

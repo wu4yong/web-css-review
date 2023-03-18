@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过定位来设置尺寸</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        article{
+            border: solid 8px blueviolet;
+            width:400px;
+            height:400px;
+            margin: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        nav{
+            background: blueviolet;
+            /* width: 200px;
+            height: 200px; */
+            position: absolute;
+            /*没有宽高定位可以更改元素尺寸*/
+            left:300px;
+            top:100px;
+            right: -100px;
+            bottom: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <nav></nav>
+    </article>
+</body>
+</html>
